@@ -11,12 +11,13 @@ app.listen(port, () => {
 
 app.get("/", (req, res) => {
     res.send("you contacted root path");
+    console.log("request is received");
 });
 
-app.get("/:username/:id", (req, res) =>{
+app.get("/:username/:id", (req, res) => {
     res.send(`welcome to the page of @${username}.`);
-    console.log(req.params)
-})
+    console.log(req.params);
+});
 
 
 
