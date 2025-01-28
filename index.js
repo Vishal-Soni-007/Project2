@@ -14,9 +14,16 @@ app.get("/", (req, res) => {
     console.log("request is received");
 });
 
-app.get("/:username/:id", (req, res) => {
-    res.send(`welcome to the page of @${username}.`);
+app.get("/:username", (req,res) =>{
     console.log(req.params);
+    const {username} = req.params;
+    res.send(`Hello, ${username}`);
+   
+});
+app.get("/:username/:id",(req,res) =>{
+    console.log(req.params);
+    const { username, id} = req.params;
+    res.send(`hello, ${username}, your ID is ${id}`);
 });
 
 
